@@ -62,6 +62,7 @@ RUN (set -x; cd "$(mktemp -d)" && \
 # Copy the provisional script to build container
 COPY ./run.sh /home
 COPY ./reset.sh /home
+
 RUN chmod 755 /home/run.sh
 RUN chmod 755 /home/reset.sh
 

@@ -12,6 +12,9 @@ echo "Starting build process..."
 echo "Adding env variables..."
 export PATH=/root/bin:$PATH
 
+eval $(ssh-agent -s)
+ssh-add /home/bevel/.ssh/id_ed25519
+
 #Path to k8s config file
 KUBECONFIG=/home/bevel/build/config
 
