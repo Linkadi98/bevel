@@ -11,7 +11,11 @@ spec:
     branch: develop
   secretRef:
     name: flux-system
+<<<<<<< HEAD
   url: https://github.com/Linkadi98/bevel.git
+=======
+  url: ssh://git@github.com/Linkadi98/bevel.git
+>>>>>>> c9f7ae238716acf1190fda91adf34ee634830f5f
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
