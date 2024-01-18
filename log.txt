@@ -1,442 +1,89 @@
-find: '/crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/msp/keystore/': No such file or directory
-+ CURRENT_DIR=/root/ca-tools/supplychain
-+ FULLY_QUALIFIED_ORG_NAME=supplychain-net
-+ EXTERNAL_URL_SUFFIX=org1proxy.blockchain.ommani.vn
-+ ALTERNATIVE_ORG_NAMES=("org1proxy.blockchain.ommani.vn")
-+ ORG_NAME=supplychain
-+ SUBJECT=C=UK,ST=London,L=London,O=supplychain
-+ SUBJECT_PEER=O=Orderer,OU=Orderer,L=51.50/-0.13/London,C=GB
-+ CA=ca.supplychain-net.org1proxy.blockchain.ommani.vn
-+ CA_ADMIN_USER=supplychain-admin
-+ CA_ADMIN_PASS=supplychain-adminpw
-+ ORG_ADMIN_USER=Admin@supplychain-net
-+ ORG_ADMIN_PASS=Admin@supplychain-net-pw
-+ ORG_CYPTO_FOLDER=/crypto-config/ordererOrganizations/supplychain-net
-+ ROOT_TLS_CERT=/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem
-+ CAS_FOLDER=/root/ca-tools/cas/ca-supplychain
-+ ORG_HOME=/root/ca-tools/supplychain
-+ fabric-ca-client enroll -d -u https://supplychain-admin:supplychain-adminpw@ca.supplychain-net.org1proxy.blockchain.ommani.vn --tls.certfiles /crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem --home /root/ca-tools/cas/ca-supplychain --csr.names O=Orderer,OU=Orderer,L=51.50/-0.13/London,C=GB
-2024/01/16 16:50:35 [DEBUG] Home directory: /root/ca-tools/cas/ca-supplychain
-2024/01/16 16:50:35 [INFO] Created a default configuration file at /root/ca-tools/cas/ca-supplychain/fabric-ca-client-config.yaml
-2024/01/16 16:50:35 [DEBUG] Client configuration settings: &{URL:https://supplychain-admin:supplychain-adminpw@ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:msp TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:<nil> Type:x509  } CSR:{CN:supplychain-admin Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4204aac20}
-2024/01/16 16:50:35 [DEBUG] Entered runEnroll
-2024/01/16 16:50:35 [DEBUG] Enrolling { Name:supplychain-admin Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:&{supplychain-admin [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [ca-tools-5d5bfc5d68-f57mn] <nil> <nil> } Type:x509  }
-2024/01/16 16:50:35 [DEBUG] Initializing client with config: &{URL:https://ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:msp TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name:supplychain-admin Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:&{supplychain-admin [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [ca-tools-5d5bfc5d68-f57mn] <nil> <nil> } Type:x509  } CSR:{CN:supplychain-admin Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4204aac20}
-2024/01/16 16:50:35 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc42018c7e0 PluginOpts:<nil>}
-2024/01/16 16:50:35 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc420488640 DummyKeystore:<nil>}
-2024/01/16 16:50:35 [INFO] TLS Enabled
-2024/01/16 16:50:35 [DEBUG] CA Files: [/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem]
-2024/01/16 16:50:35 [DEBUG] Client Cert File: 
-2024/01/16 16:50:35 [DEBUG] Client Key File: 
-2024/01/16 16:50:35 [DEBUG] Client TLS certificate and/or key file not provided
-2024/01/16 16:50:35 [DEBUG] GenCSR &{CN:supplychain-admin Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:}
-2024/01/16 16:50:35 [INFO] generating key: &{A:ecdsa S:256}
-2024/01/16 16:50:35 [DEBUG] generate key from request: algo=ecdsa, size=256
-2024/01/16 16:50:35 [INFO] encoded CSR
-2024/01/16 16:50:35 [DEBUG] Sending request
-POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["ca-tools-5d5bfc5d68-f57mn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBXDCCAQMCAQAwajELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEaMBgG\nA1UEAxMRc3VwcGx5Y2hhaW4tYWRtaW4wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNC\nAATojLd9ihSd3pZRVJ+V88KZmM44fmqHWUKjkpU/QaxBpEQ1e0fxeG0owtKjKf2N\nlRZyJdz49H24xkbzvnZyHmXHoDcwNQYJKoZIhvcNAQkOMSgwJjAkBgNVHREEHTAb\nghljYS10b29scy01ZDViZmM1ZDY4LWY1N21uMAoGCCqGSM49BAMCA0cAMEQCIATA\nR8HsNgy06sZQxkfAU0NOI8mhtpGYDEnb1rvE9XjlAiAePK5zpwGVImp4iEd0tN9b\nGFaPjTYNXdH7yx8IxBHTFw==\n-----END CERTIFICATE REQUEST-----\n","profile":"","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}
-Error: POST failure of request: POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["ca-tools-5d5bfc5d68-f57mn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBXDCCAQMCAQAwajELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEaMBgG\nA1UEAxMRc3VwcGx5Y2hhaW4tYWRtaW4wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNC\nAATojLd9ihSd3pZRVJ+V88KZmM44fmqHWUKjkpU/QaxBpEQ1e0fxeG0owtKjKf2N\nlRZyJdz49H24xkbzvnZyHmXHoDcwNQYJKoZIhvcNAQkOMSgwJjAkBgNVHREEHTAb\nghljYS10b29scy01ZDViZmM1ZDY4LWY1N21uMAoGCCqGSM49BAMCA0cAMEQCIATA\nR8HsNgy06sZQxkfAU0NOI8mhtpGYDEnb1rvE9XjlAiAePK5zpwGVImp4iEd0tN9b\nGFaPjTYNXdH7yx8IxBHTFw==\n-----END CERTIFICATE REQUEST-----\n","profile":"","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}: Post https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll: dial tcp: lookup ca.supplychain-net.org1proxy.blockchain.ommani.vn on 10.96.0.10:53: no such host
-+ fabric-ca-client getcacert -d -u https://ca.supplychain-net.org1proxy.blockchain.ommani.vn --tls.certfiles /crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem -M /crypto-config/ordererOrganizations/supplychain-net/msp
-2024/01/16 16:50:35 [DEBUG] Home directory: /root/.fabric-ca-client
-2024/01/16 16:50:35 [INFO] Configuration file location: /root/.fabric-ca-client/fabric-ca-client-config.yaml
-2024/01/16 16:50:35 [DEBUG] Client configuration settings: &{URL:https://ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:/crypto-config/ordererOrganizations/supplychain-net/msp TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:<nil> Type:x509  } CSR:{CN: Names:[] Hosts:[] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:<nil>}
-2024/01/16 16:50:35 [DEBUG] Entered runGetCACert
-2024/01/16 16:50:35 [DEBUG] Initializing client with config: &{URL:https://ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:/crypto-config/ordererOrganizations/supplychain-net/msp TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:<nil> Type:x509  } CSR:{CN: Names:[] Hosts:[] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:<nil>}
-2024/01/16 16:50:35 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc4201a2db0 PluginOpts:<nil>}
-2024/01/16 16:50:35 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc42037e350 DummyKeystore:<nil>}
-2024/01/16 16:50:35 [INFO] TLS Enabled
-2024/01/16 16:50:35 [DEBUG] CA Files: [/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem]
-2024/01/16 16:50:35 [DEBUG] Client Cert File: 
-2024/01/16 16:50:35 [DEBUG] Client Key File: 
-2024/01/16 16:50:35 [DEBUG] Client TLS certificate and/or key file not provided
-2024/01/16 16:50:35 [DEBUG] Sending request
-POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/cainfo
-{}
-Error: POST failure of request: POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/cainfo
-{}: Post https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/cainfo: dial tcp: lookup ca.supplychain-net.org1proxy.blockchain.ommani.vn on 10.96.0.10:53: no such host
-+ '[' haproxy '!=' none ']'
-+ mv '/crypto-config/ordererOrganizations/supplychain-net/msp/cacerts/*.pem' /crypto-config/ordererOrganizations/supplychain-net/msp/cacerts/ca-supplychain-net-org1proxy.blockchain.ommani.vn.pem
-mv: cannot stat '/crypto-config/ordererOrganizations/supplychain-net/msp/cacerts/*.pem': No such file or directory
-+ mkdir /crypto-config/ordererOrganizations/supplychain-net/msp/tlscacerts
-+ cp '/crypto-config/ordererOrganizations/supplychain-net/msp/cacerts/*' /crypto-config/ordererOrganizations/supplychain-net/msp/tlscacerts
-cp: cannot stat '/crypto-config/ordererOrganizations/supplychain-net/msp/cacerts/*': No such file or directory
-+ fabric-ca-client register -d --id.name Admin@supplychain-net --id.secret Admin@supplychain-net-pw --id.type admin --csr.names O=Orderer,OU=Orderer,L=51.50/-0.13/London,C=GB --id.attrs 'hf.Registrar.Roles=client,hf.Registrar.Attributes=*,hf.Revoker=true,hf.AffiliationMgr=true,hf.GenCRL=true,admin=true:ecert,abac.init=true:ecert' --tls.certfiles /crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem --home /root/ca-tools/cas/ca-supplychain
-2024/01/16 16:50:35 [DEBUG] Home directory: /root/ca-tools/cas/ca-supplychain
-2024/01/16 16:50:35 [INFO] Configuration file location: /root/ca-tools/cas/ca-supplychain/fabric-ca-client-config.yaml
-2024/01/16 16:50:35 [DEBUG] Checking for enrollment
-2024/01/16 16:50:35 [DEBUG] Initializing client with config: &{URL:https://ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:msp TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:<nil> Type:x509  } CSR:{CN:supplychain-admin Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:Admin@supplychain-net Type:admin Secret:Admin@supplychain-net-pw MaxEnrollments:0 Affiliation: Attributes:[{Name:hf.Registrar.Roles Value:client ECert:false} {Name:hf.Registrar.Attributes Value:* ECert:false} {Name:hf.Revoker Value:true ECert:false} {Name:hf.AffiliationMgr Value:true ECert:false} {Name:hf.GenCRL Value:true ECert:false} {Name:admin Value:true ECert:true} {Name:abac.init Value:true ECert:true}] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4201afe40}
-2024/01/16 16:50:35 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc4201b0060 PluginOpts:<nil>}
-2024/01/16 16:50:35 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201a3790 DummyKeystore:<nil>}
-2024/01/16 16:50:35 [INFO] TLS Enabled
-2024/01/16 16:50:35 [DEBUG] CA Files: [/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem]
-2024/01/16 16:50:35 [DEBUG] Client Cert File: 
-2024/01/16 16:50:35 [DEBUG] Client Key File: 
-2024/01/16 16:50:35 [DEBUG] Client TLS certificate and/or key file not provided
-2024/01/16 16:50:35 [ERROR] Enrollment check failed: Idemix enrollment information does not exist
-Error: Enrollment information does not exist. Please execute enroll command first. Example: fabric-ca-client enroll -u http://user:userpw@serverAddr:serverPort
-+ fabric-ca-client enroll -d -u https://Admin@supplychain-net:Admin@supplychain-net-pw@ca.supplychain-net.org1proxy.blockchain.ommani.vn --tls.certfiles /crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem --home /root/ca-tools/supplychain/admin --csr.names O=Orderer,OU=Orderer,L=51.50/-0.13/London,C=GB
-2024/01/16 16:50:36 [DEBUG] Home directory: /root/ca-tools/supplychain/admin
-2024/01/16 16:50:36 [INFO] Created a default configuration file at /root/ca-tools/supplychain/admin/fabric-ca-client-config.yaml
-2024/01/16 16:50:36 [DEBUG] Client configuration settings: &{URL:https://Admin@supplychain-net:Admin@supplychain-net-pw@ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:msp TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:<nil> Type:x509  } CSR:{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42047fdc0}
-2024/01/16 16:50:36 [DEBUG] Entered runEnroll
-2024/01/16 16:50:36 [DEBUG] Enrolling { Name:Admin@supplychain-net Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:&{Admin@supplychain-net [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [ca-tools-5d5bfc5d68-f57mn] <nil> <nil> } Type:x509  }
-2024/01/16 16:50:36 [DEBUG] Initializing client with config: &{URL:https://ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:msp TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name:Admin@supplychain-net Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:&{Admin@supplychain-net [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [ca-tools-5d5bfc5d68-f57mn] <nil> <nil> } Type:x509  } CSR:{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42047fdc0}
-2024/01/16 16:50:36 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc42017a7e0 PluginOpts:<nil>}
-2024/01/16 16:50:36 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4204c4680 DummyKeystore:<nil>}
-2024/01/16 16:50:36 [INFO] TLS Enabled
-2024/01/16 16:50:36 [DEBUG] CA Files: [/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem]
-2024/01/16 16:50:36 [DEBUG] Client Cert File: 
-2024/01/16 16:50:36 [DEBUG] Client Key File: 
-2024/01/16 16:50:36 [DEBUG] Client TLS certificate and/or key file not provided
-2024/01/16 16:50:36 [DEBUG] GenCSR &{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:}
-2024/01/16 16:50:36 [INFO] generating key: &{A:ecdsa S:256}
-2024/01/16 16:50:36 [DEBUG] generate key from request: algo=ecdsa, size=256
-2024/01/16 16:50:36 [INFO] encoded CSR
-2024/01/16 16:50:36 [DEBUG] Sending request
-POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["ca-tools-5d5bfc5d68-f57mn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBYDCCAQcCAQAwbjELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEeMBwG\nA1UEAwwVQWRtaW5Ac3VwcGx5Y2hhaW4tbmV0MFkwEwYHKoZIzj0CAQYIKoZIzj0D\nAQcDQgAE4FP7GaREP+E7/9mDIDbCmy8rLCvWKzUIjPHTT6KVewP1n8xGOj9rPG/R\nmWdLpCg+bCAwzVnogvNC3TCOty40mqA3MDUGCSqGSIb3DQEJDjEoMCYwJAYDVR0R\nBB0wG4IZY2EtdG9vbHMtNWQ1YmZjNWQ2OC1mNTdtbjAKBggqhkjOPQQDAgNHADBE\nAiAORjdbJnhyzZ5wA/tHtg0W4EqNudyqTXmHvBi/fs9LHgIgfuoJrSio1xH7kQNL\nhxEwuffyB6SR0exA8wh9uO/BhNM=\n-----END CERTIFICATE REQUEST-----\n","profile":"","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}
-Error: POST failure of request: POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["ca-tools-5d5bfc5d68-f57mn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBYDCCAQcCAQAwbjELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEeMBwG\nA1UEAwwVQWRtaW5Ac3VwcGx5Y2hhaW4tbmV0MFkwEwYHKoZIzj0CAQYIKoZIzj0D\nAQcDQgAE4FP7GaREP+E7/9mDIDbCmy8rLCvWKzUIjPHTT6KVewP1n8xGOj9rPG/R\nmWdLpCg+bCAwzVnogvNC3TCOty40mqA3MDUGCSqGSIb3DQEJDjEoMCYwJAYDVR0R\nBB0wG4IZY2EtdG9vbHMtNWQ1YmZjNWQ2OC1mNTdtbjAKBggqhkjOPQQDAgNHADBE\nAiAORjdbJnhyzZ5wA/tHtg0W4EqNudyqTXmHvBi/fs9LHgIgfuoJrSio1xH7kQNL\nhxEwuffyB6SR0exA8wh9uO/BhNM=\n-----END CERTIFICATE REQUEST-----\n","profile":"","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}: Post https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll: dial tcp: lookup ca.supplychain-net.org1proxy.blockchain.ommani.vn on 10.96.0.10:53: no such host
-+ mkdir -p /crypto-config/ordererOrganizations/supplychain-net/msp/admincerts
-+ cp '/root/ca-tools/supplychain/admin/msp/signcerts/*' /crypto-config/ordererOrganizations/supplychain-net/msp/admincerts/Admin@supplychain-net-cert.pem
-cp: cannot stat '/root/ca-tools/supplychain/admin/msp/signcerts/*': No such file or directory
-+ mkdir /root/ca-tools/supplychain/admin/msp/admincerts
-+ cp '/root/ca-tools/supplychain/admin/msp/signcerts/*' /root/ca-tools/supplychain/admin/msp/admincerts/Admin@supplychain-net-cert.pem
-cp: cannot stat '/root/ca-tools/supplychain/admin/msp/signcerts/*': No such file or directory
-+ mkdir -p /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net
-+ cp -R /root/ca-tools/supplychain/admin/msp /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net
-+ '[' haproxy '!=' none ']'
-+ mv '/crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/msp/cacerts/*.pem' /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/msp/cacerts/ca-supplychain-net-org1proxy.blockchain.ommani.vn.pem
-mv: cannot stat '/crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/msp/cacerts/*.pem': No such file or directory
-+ fabric-ca-client enroll -d --enrollment.profile tls -u https://Admin@supplychain-net:Admin@supplychain-net-pw@ca.supplychain-net.org1proxy.blockchain.ommani.vn -M /root/ca-tools/supplychain/admin/tls --tls.certfiles /crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem --csr.names O=Orderer,OU=Orderer,L=51.50/-0.13/London,C=GB
-2024/01/16 16:50:36 [DEBUG] Home directory: /root/.fabric-ca-client
-2024/01/16 16:50:36 [INFO] Created a default configuration file at /root/.fabric-ca-client/fabric-ca-client-config.yaml
-2024/01/16 16:50:36 [DEBUG] Client configuration settings: &{URL:https://Admin@supplychain-net:Admin@supplychain-net-pw@ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:/root/ca-tools/supplychain/admin/tls TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** CAName: AttrReqs:[] Profile:tls Label: CSR:<nil> Type:x509  } CSR:{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4204829e0}
-2024/01/16 16:50:36 [DEBUG] Entered runEnroll
-2024/01/16 16:50:36 [DEBUG] Enrolling { Name:Admin@supplychain-net Secret:**** CAName: AttrReqs:[] Profile:tls Label: CSR:&{Admin@supplychain-net [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [ca-tools-5d5bfc5d68-f57mn] <nil> <nil> } Type:x509  }
-2024/01/16 16:50:36 [DEBUG] Initializing client with config: &{URL:https://ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:/root/ca-tools/supplychain/admin/tls TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name:Admin@supplychain-net Secret:**** CAName: AttrReqs:[] Profile:tls Label: CSR:&{Admin@supplychain-net [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [ca-tools-5d5bfc5d68-f57mn] <nil> <nil> } Type:x509  } CSR:{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4204829e0}
-2024/01/16 16:50:36 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc42017a750 PluginOpts:<nil>}
-2024/01/16 16:50:36 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc420432b70 DummyKeystore:<nil>}
-2024/01/16 16:50:36 [INFO] TLS Enabled
-2024/01/16 16:50:36 [DEBUG] CA Files: [/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem]
-2024/01/16 16:50:36 [DEBUG] Client Cert File: 
-2024/01/16 16:50:36 [DEBUG] Client Key File: 
-2024/01/16 16:50:36 [DEBUG] Client TLS certificate and/or key file not provided
-2024/01/16 16:50:36 [DEBUG] GenCSR &{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:}
-2024/01/16 16:50:36 [INFO] generating key: &{A:ecdsa S:256}
-2024/01/16 16:50:36 [DEBUG] generate key from request: algo=ecdsa, size=256
-2024/01/16 16:50:36 [INFO] encoded CSR
-2024/01/16 16:50:36 [DEBUG] Sending request
-POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["ca-tools-5d5bfc5d68-f57mn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBYTCCAQcCAQAwbjELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEeMBwG\nA1UEAwwVQWRtaW5Ac3VwcGx5Y2hhaW4tbmV0MFkwEwYHKoZIzj0CAQYIKoZIzj0D\nAQcDQgAELkhEAe7vtOBG3LphDgdoua4zq6g9YfQ87xtOJBjrxU98eZ0vZAnXZnY5\nwCMzDvwOkhpWi094eGarCwXRCBRKH6A3MDUGCSqGSIb3DQEJDjEoMCYwJAYDVR0R\nBB0wG4IZY2EtdG9vbHMtNWQ1YmZjNWQ2OC1mNTdtbjAKBggqhkjOPQQDAgNIADBF\nAiEAxSmUSNGD6dBhV/zDm3BLNaJKQh17+ehezHCZqk6hb9oCIBL1RU/ditirzsn3\njpMMnad3QF5+9oighJPS1zNpBj59\n-----END CERTIFICATE REQUEST-----\n","profile":"tls","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}
-Error: POST failure of request: POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["ca-tools-5d5bfc5d68-f57mn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBYTCCAQcCAQAwbjELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEeMBwG\nA1UEAwwVQWRtaW5Ac3VwcGx5Y2hhaW4tbmV0MFkwEwYHKoZIzj0CAQYIKoZIzj0D\nAQcDQgAELkhEAe7vtOBG3LphDgdoua4zq6g9YfQ87xtOJBjrxU98eZ0vZAnXZnY5\nwCMzDvwOkhpWi094eGarCwXRCBRKH6A3MDUGCSqGSIb3DQEJDjEoMCYwJAYDVR0R\nBB0wG4IZY2EtdG9vbHMtNWQ1YmZjNWQ2OC1mNTdtbjAKBggqhkjOPQQDAgNIADBF\nAiEAxSmUSNGD6dBhV/zDm3BLNaJKQh17+ehezHCZqk6hb9oCIBL1RU/ditirzsn3\njpMMnad3QF5+9oighJPS1zNpBj59\n-----END CERTIFICATE REQUEST-----\n","profile":"tls","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}: Post https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll: dial tcp: lookup ca.supplychain-net.org1proxy.blockchain.ommani.vn on 10.96.0.10:53: no such host
-+ mkdir -p /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/tls
-+ cp /root/ca-tools/supplychain/admin/tls/keystore/613b26b7168b6eb4ccb5ffd243398da766f08f17ca3d5f846e7974e65eabc4de_sk /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/tls/client.key
-+ cp '/root/ca-tools/supplychain/admin/tls/signcerts/*' /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/tls/client.crt
-cp: cannot stat '/root/ca-tools/supplychain/admin/tls/signcerts/*': No such file or directory
-+ cp '/root/ca-tools/supplychain/admin/tls/tlscacerts/*' /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/tls/ca.crt
-cp: cannot stat '/root/ca-tools/supplychain/admin/tls/tlscacerts/*': No such file or directory
-+ cd /root/ca-tools/supplychain
-need to execute scripts for orderer1 
-find: '/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/msp/keystore/': No such file or directory
-Registering and enrolling orderer1.supplychain-net with csr hosts orderer1.supplychain-net,orderer1.org1proxy.blockchain.ommani.vn
-+ CURRENT_DIR=/root/ca-tools/supplychain
-+ FULLY_QUALIFIED_ORG_NAME=supplychain-net
-+ EXTERNAL_URL_SUFFIX=org1proxy.blockchain.ommani.vn
-+ ALTERNATIVE_ORG_NAMES=("org1proxy.blockchain.ommani.vn")
-+ ORG_NAME=supplychain
-+ SUBJECT=C=UK,ST=London,L=London,O=supplychain
-+ SUBJECT_PEER=O=Orderer,OU=Orderer,L=51.50/-0.13/London,C=GB
-+ CA=ca.supplychain-net.org1proxy.blockchain.ommani.vn
-+ CA_ADMIN_USER=supplychain-admin
-+ CA_ADMIN_PASS=supplychain-adminpw
-+ ORDERER_NAME=orderer1
-+ ORG_ADMIN_USER=Admin@supplychain-net
-+ ORG_ADMIN_PASS=Admin@supplychain-net-pw
-+ ORG_CYPTO_FOLDER=/crypto-config/ordererOrganizations/supplychain-net
-+ ROOT_TLS_CERT=/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem
-+ CAS_FOLDER=/root/ca-tools/cas/ca-supplychain
-+ ORG_HOME=/root/ca-tools/supplychain
-+ PEER=orderer1.supplychain-net
-+ CSR_HOSTS=orderer1.supplychain-net
-+ for i in '"${ALTERNATIVE_ORG_NAMES[@]}"'
-+ CSR_HOSTS=orderer1.supplychain-net,orderer1.org1proxy.blockchain.ommani.vn
-+ echo 'Registering and enrolling orderer1.supplychain-net with csr hosts orderer1.supplychain-net,orderer1.org1proxy.blockchain.ommani.vn'
-+ fabric-ca-client register -d --id.name orderer1.supplychain-net --id.secret orderer1.supplychain-net-pw --id.type orderer --tls.certfiles /crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem --home /root/ca-tools/cas/ca-supplychain
-2024/01/16 16:50:36 [DEBUG] Home directory: /root/ca-tools/cas/ca-supplychain
-2024/01/16 16:50:36 [INFO] Configuration file location: /root/ca-tools/cas/ca-supplychain/fabric-ca-client-config.yaml
-2024/01/16 16:50:36 [DEBUG] Checking for enrollment
-2024/01/16 16:50:36 [DEBUG] Initializing client with config: &{URL:https://ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:msp TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:<nil> Type:x509  } CSR:{CN:supplychain-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:orderer1.supplychain-net Type:orderer Secret:orderer1.supplychain-net-pw MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420487d60}
-2024/01/16 16:50:36 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc420065d70 PluginOpts:<nil>}
-2024/01/16 16:50:36 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc420488d00 DummyKeystore:<nil>}
-2024/01/16 16:50:36 [INFO] TLS Enabled
-2024/01/16 16:50:36 [DEBUG] CA Files: [/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem]
-2024/01/16 16:50:36 [DEBUG] Client Cert File: 
-2024/01/16 16:50:36 [DEBUG] Client Key File: 
-2024/01/16 16:50:36 [DEBUG] Client TLS certificate and/or key file not provided
-2024/01/16 16:50:36 [ERROR] Enrollment check failed: Idemix enrollment information does not exist
-Error: Enrollment information does not exist. Please execute enroll command first. Example: fabric-ca-client enroll -u http://user:userpw@serverAddr:serverPort
-+ fabric-ca-client enroll -d --enrollment.profile tls -u https://orderer1.supplychain-net:orderer1.supplychain-net-pw@ca.supplychain-net.org1proxy.blockchain.ommani.vn -M /root/ca-tools/supplychain/cas/orderers/tls --csr.hosts orderer1.supplychain-net,orderer1.org1proxy.blockchain.ommani.vn --tls.certfiles /crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem --csr.names O=Orderer,OU=Orderer,L=51.50/-0.13/London,C=GB
-2024/01/16 16:50:37 [DEBUG] Home directory: /root/.fabric-ca-client
-2024/01/16 16:50:37 [DEBUG] Client configuration settings: &{URL:https://orderer1.supplychain-net:orderer1.supplychain-net-pw@ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:/root/ca-tools/supplychain/cas/orderers/tls TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** CAName: AttrReqs:[] Profile:tls Label: CSR:<nil> Type:x509  } CSR:{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[orderer1.supplychain-net orderer1.org1proxy.blockchain.ommani.vn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4204f2c00}
-2024/01/16 16:50:37 [DEBUG] Entered runEnroll
-2024/01/16 16:50:37 [DEBUG] Enrolling { Name:orderer1.supplychain-net Secret:**** CAName: AttrReqs:[] Profile:tls Label: CSR:&{Admin@supplychain-net [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [orderer1.supplychain-net orderer1.org1proxy.blockchain.ommani.vn] <nil> <nil> } Type:x509  }
-2024/01/16 16:50:37 [DEBUG] Initializing client with config: &{URL:https://ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:/root/ca-tools/supplychain/cas/orderers/tls TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name:orderer1.supplychain-net Secret:**** CAName: AttrReqs:[] Profile:tls Label: CSR:&{Admin@supplychain-net [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [orderer1.supplychain-net orderer1.org1proxy.blockchain.ommani.vn] <nil> <nil> } Type:x509  } CSR:{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[orderer1.supplychain-net orderer1.org1proxy.blockchain.ommani.vn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4204f2c00}
-2024/01/16 16:50:37 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc42018e630 PluginOpts:<nil>}
-2024/01/16 16:50:37 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc420193a60 DummyKeystore:<nil>}
-2024/01/16 16:50:37 [INFO] TLS Enabled
-2024/01/16 16:50:37 [DEBUG] CA Files: [/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem]
-2024/01/16 16:50:37 [DEBUG] Client Cert File: 
-2024/01/16 16:50:37 [DEBUG] Client Key File: 
-2024/01/16 16:50:37 [DEBUG] Client TLS certificate and/or key file not provided
-2024/01/16 16:50:37 [DEBUG] GenCSR &{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[orderer1.supplychain-net orderer1.org1proxy.blockchain.ommani.vn] KeyRequest:<nil> CA:<nil> SerialNumber:}
-2024/01/16 16:50:37 [INFO] generating key: &{A:ecdsa S:256}
-2024/01/16 16:50:37 [DEBUG] generate key from request: algo=ecdsa, size=256
-2024/01/16 16:50:37 [INFO] encoded CSR
-2024/01/16 16:50:37 [DEBUG] Sending request
-POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["orderer1.supplychain-net","orderer1.org1proxy.blockchain.ommani.vn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBizCCATICAQAwcTELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEhMB8G\nA1UEAxMYb3JkZXJlcjEuc3VwcGx5Y2hhaW4tbmV0MFkwEwYHKoZIzj0CAQYIKoZI\nzj0DAQcDQgAE7v9uEt3Wk2Z9VIb2a3lE3BcpaGMN7WsSuWfgLZ987jG6Qnc8zoG9\nQmiUmwGw3u2KthdWHYWTTzKpXWMSqXM58KBfMF0GCSqGSIb3DQEJDjFQME4wTAYD\nVR0RBEUwQ4IYb3JkZXJlcjEuc3VwcGx5Y2hhaW4tbmV0gidvcmRlcmVyMS5vcmcx\ncHJveHkuYmxvY2tjaGFpbi5vbW1hbmkudm4wCgYIKoZIzj0EAwIDRwAwRAIgHGdh\njT/S8AtCZP/ke5qmeK8fejS2t7V9Sda5fGqr/XgCICCfcHX2PJ/MYbsN6tDoA9TT\nKS+zhx0Lb5qaP5kCEDMw\n-----END CERTIFICATE REQUEST-----\n","profile":"tls","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}
-Error: POST failure of request: POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["orderer1.supplychain-net","orderer1.org1proxy.blockchain.ommani.vn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBizCCATICAQAwcTELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEhMB8G\nA1UEAxMYb3JkZXJlcjEuc3VwcGx5Y2hhaW4tbmV0MFkwEwYHKoZIzj0CAQYIKoZI\nzj0DAQcDQgAE7v9uEt3Wk2Z9VIb2a3lE3BcpaGMN7WsSuWfgLZ987jG6Qnc8zoG9\nQmiUmwGw3u2KthdWHYWTTzKpXWMSqXM58KBfMF0GCSqGSIb3DQEJDjFQME4wTAYD\nVR0RBEUwQ4IYb3JkZXJlcjEuc3VwcGx5Y2hhaW4tbmV0gidvcmRlcmVyMS5vcmcx\ncHJveHkuYmxvY2tjaGFpbi5vbW1hbmkudm4wCgYIKoZIzj0EAwIDRwAwRAIgHGdh\njT/S8AtCZP/ke5qmeK8fejS2t7V9Sda5fGqr/XgCICCfcHX2PJ/MYbsN6tDoA9TT\nKS+zhx0Lb5qaP5kCEDMw\n-----END CERTIFICATE REQUEST-----\n","profile":"tls","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}: Post https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll: dial tcp: lookup ca.supplychain-net.org1proxy.blockchain.ommani.vn on 10.96.0.10:53: no such host
-+ mkdir -p /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/tls
-+ cp /root/ca-tools/supplychain/cas/orderers/tls/keystore/4c2c2c0d9ce95fac615f559a9d54b42334b1009f5ddc390ac733b0c11692a051_sk /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/tls/server.key
-+ cp '/root/ca-tools/supplychain/cas/orderers/tls/signcerts/*' /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/tls/server.crt
-cp: cannot stat '/root/ca-tools/supplychain/cas/orderers/tls/signcerts/*': No such file or directory
-+ cp '/root/ca-tools/supplychain/cas/orderers/tls/tlscacerts/*' /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/tls/ca.crt
-cp: cannot stat '/root/ca-tools/supplychain/cas/orderers/tls/tlscacerts/*': No such file or directory
-+ rm -rf /root/ca-tools/supplychain/cas/orderers/tls
-+ fabric-ca-client enroll -d -u https://orderer1.supplychain-net:orderer1.supplychain-net-pw@ca.supplychain-net.org1proxy.blockchain.ommani.vn -M /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/msp --tls.certfiles /crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem --csr.names O=Orderer,OU=Orderer,L=51.50/-0.13/London,C=GB
-2024/01/16 16:50:37 [DEBUG] Home directory: /root/.fabric-ca-client
-2024/01/16 16:50:37 [DEBUG] Client configuration settings: &{URL:https://orderer1.supplychain-net:orderer1.supplychain-net-pw@ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/msp TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:<nil> Type:x509  } CSR:{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4204b3a60}
-2024/01/16 16:50:37 [DEBUG] Entered runEnroll
-2024/01/16 16:50:37 [DEBUG] Enrolling { Name:orderer1.supplychain-net Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:&{Admin@supplychain-net [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [ca-tools-5d5bfc5d68-f57mn] <nil> <nil> } Type:x509  }
-2024/01/16 16:50:37 [DEBUG] Initializing client with config: &{URL:https://ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/msp TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name:orderer1.supplychain-net Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:&{Admin@supplychain-net [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [ca-tools-5d5bfc5d68-f57mn] <nil> <nil> } Type:x509  } CSR:{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4204b3a60}
-2024/01/16 16:50:37 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc4200bc660 PluginOpts:<nil>}
-2024/01/16 16:50:37 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc420483ca0 DummyKeystore:<nil>}
-2024/01/16 16:50:37 [INFO] TLS Enabled
-2024/01/16 16:50:37 [DEBUG] CA Files: [/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem]
-2024/01/16 16:50:37 [DEBUG] Client Cert File: 
-2024/01/16 16:50:37 [DEBUG] Client Key File: 
-2024/01/16 16:50:37 [DEBUG] Client TLS certificate and/or key file not provided
-2024/01/16 16:50:37 [DEBUG] GenCSR &{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:}
-2024/01/16 16:50:37 [INFO] generating key: &{A:ecdsa S:256}
-2024/01/16 16:50:37 [DEBUG] generate key from request: algo=ecdsa, size=256
-2024/01/16 16:50:37 [INFO] encoded CSR
-2024/01/16 16:50:37 [DEBUG] Sending request
-POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["ca-tools-5d5bfc5d68-f57mn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBZDCCAQoCAQAwcTELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEhMB8G\nA1UEAxMYb3JkZXJlcjEuc3VwcGx5Y2hhaW4tbmV0MFkwEwYHKoZIzj0CAQYIKoZI\nzj0DAQcDQgAEn8cJfOdcEILQUQ7qV6cGfKrCmIX2BJAlY57hl1vwZnSK0zbkWkgS\no/wj22MdnXDUXVxZp8sl17FvaXj+yFaVt6A3MDUGCSqGSIb3DQEJDjEoMCYwJAYD\nVR0RBB0wG4IZY2EtdG9vbHMtNWQ1YmZjNWQ2OC1mNTdtbjAKBggqhkjOPQQDAgNI\nADBFAiEA8LCi7/+Td2xGdry2QvUZgNl9Q2H6o+/Hf2Rcl+oc4cICIAjRc5PxnMEV\nfG7JQr45QYMVO6wtAS1xuh/G8A70SDlw\n-----END CERTIFICATE REQUEST-----\n","profile":"","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}
-Error: POST failure of request: POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["ca-tools-5d5bfc5d68-f57mn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBZDCCAQoCAQAwcTELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEhMB8G\nA1UEAxMYb3JkZXJlcjEuc3VwcGx5Y2hhaW4tbmV0MFkwEwYHKoZIzj0CAQYIKoZI\nzj0DAQcDQgAEn8cJfOdcEILQUQ7qV6cGfKrCmIX2BJAlY57hl1vwZnSK0zbkWkgS\no/wj22MdnXDUXVxZp8sl17FvaXj+yFaVt6A3MDUGCSqGSIb3DQEJDjEoMCYwJAYD\nVR0RBB0wG4IZY2EtdG9vbHMtNWQ1YmZjNWQ2OC1mNTdtbjAKBggqhkjOPQQDAgNI\nADBFAiEA8LCi7/+Td2xGdry2QvUZgNl9Q2H6o+/Hf2Rcl+oc4cICIAjRc5PxnMEV\nfG7JQr45QYMVO6wtAS1xuh/G8A70SDlw\n-----END CERTIFICATE REQUEST-----\n","profile":"","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}: Post https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll: dial tcp: lookup ca.supplychain-net.org1proxy.blockchain.ommani.vn on 10.96.0.10:53: no such host
-+ mkdir /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/msp/tlscacerts
-+ '[' haproxy '!=' none ']'
-+ mv '/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/msp/cacerts/*.pem' /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/msp/cacerts/ca-supplychain-net-org1proxy.blockchain.ommani.vn.pem
-mv: cannot stat '/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/msp/cacerts/*.pem': No such file or directory
-+ cp '/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/msp/cacerts/*' /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/msp/tlscacerts
-cp: cannot stat '/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/msp/cacerts/*': No such file or directory
-+ mkdir -p /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/msp/admincerts
-+ cp /crypto-config/ordererOrganizations/supplychain-net/msp/admincerts/Admin@supplychain-net-cert.pem /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/msp/admincerts
-need to execute scripts for orderer2 
-cp: cannot stat '/crypto-config/ordererOrganizations/supplychain-net/msp/admincerts/Admin@supplychain-net-cert.pem': No such file or directory
-+ cd /root/ca-tools/supplychain
-find: '/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/msp/keystore/': No such file or directory
-+ CURRENT_DIR=/root/ca-tools/supplychain
-+ FULLY_QUALIFIED_ORG_NAME=supplychain-net
-+ EXTERNAL_URL_SUFFIX=org1proxy.blockchain.ommani.vn
-+ ALTERNATIVE_ORG_NAMES=("org1proxy.blockchain.ommani.vn")
-+ ORG_NAME=supplychain
-+ SUBJECT=C=UK,ST=London,L=London,O=supplychain
-+ SUBJECT_PEER=O=Orderer,OU=Orderer,L=51.50/-0.13/London,C=GB
-+ CA=ca.supplychain-net.org1proxy.blockchain.ommani.vn
-+ CA_ADMIN_USER=supplychain-admin
-+ CA_ADMIN_PASS=supplychain-adminpw
-+ ORDERER_NAME=orderer2
-+ ORG_ADMIN_USER=Admin@supplychain-net
-+ ORG_ADMIN_PASS=Admin@supplychain-net-pw
-+ ORG_CYPTO_FOLDER=/crypto-config/ordererOrganizations/supplychain-net
-+ ROOT_TLS_CERT=/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem
-+ CAS_FOLDER=/root/ca-tools/cas/ca-supplychain
-+ ORG_HOME=/root/ca-tools/supplychain
-+ PEER=orderer2.supplychain-net
-+ CSR_HOSTS=orderer2.supplychain-net
-+ for i in '"${ALTERNATIVE_ORG_NAMES[@]}"'
-+ CSR_HOSTS=orderer2.supplychain-net,orderer2.org1proxy.blockchain.ommani.vn
-+ echo 'Registering and enrolling orderer2.supplychain-net with csr hosts orderer2.supplychain-net,orderer2.org1proxy.blockchain.ommani.vn'
-+ fabric-ca-client register -d --id.name orderer2.supplychain-net --id.secret orderer2.supplychain-net-pw --id.type orderer --tls.certfiles /crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem --home /root/ca-tools/cas/ca-supplychain
-Registering and enrolling orderer2.supplychain-net with csr hosts orderer2.supplychain-net,orderer2.org1proxy.blockchain.ommani.vn
-2024/01/16 16:50:37 [DEBUG] Home directory: /root/ca-tools/cas/ca-supplychain
-2024/01/16 16:50:37 [INFO] Configuration file location: /root/ca-tools/cas/ca-supplychain/fabric-ca-client-config.yaml
-2024/01/16 16:50:37 [DEBUG] Checking for enrollment
-2024/01/16 16:50:37 [DEBUG] Initializing client with config: &{URL:https://ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:msp TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:<nil> Type:x509  } CSR:{CN:supplychain-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:orderer2.supplychain-net Type:orderer Secret:orderer2.supplychain-net-pw MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42000cbe0}
-2024/01/16 16:50:37 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc4200d6600 PluginOpts:<nil>}
-2024/01/16 16:50:37 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc42047c970 DummyKeystore:<nil>}
-2024/01/16 16:50:37 [INFO] TLS Enabled
-2024/01/16 16:50:37 [DEBUG] CA Files: [/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem]
-2024/01/16 16:50:37 [DEBUG] Client Cert File: 
-2024/01/16 16:50:37 [DEBUG] Client Key File: 
-2024/01/16 16:50:37 [DEBUG] Client TLS certificate and/or key file not provided
-2024/01/16 16:50:37 [ERROR] Enrollment check failed: Idemix enrollment information does not exist
-Error: Enrollment information does not exist. Please execute enroll command first. Example: fabric-ca-client enroll -u http://user:userpw@serverAddr:serverPort
-+ fabric-ca-client enroll -d --enrollment.profile tls -u https://orderer2.supplychain-net:orderer2.supplychain-net-pw@ca.supplychain-net.org1proxy.blockchain.ommani.vn -M /root/ca-tools/supplychain/cas/orderers/tls --csr.hosts orderer2.supplychain-net,orderer2.org1proxy.blockchain.ommani.vn --tls.certfiles /crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem --csr.names O=Orderer,OU=Orderer,L=51.50/-0.13/London,C=GB
-2024/01/16 16:50:38 [DEBUG] Home directory: /root/.fabric-ca-client
-2024/01/16 16:50:38 [DEBUG] Client configuration settings: &{URL:https://orderer2.supplychain-net:orderer2.supplychain-net-pw@ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:/root/ca-tools/supplychain/cas/orderers/tls TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** CAName: AttrReqs:[] Profile:tls Label: CSR:<nil> Type:x509  } CSR:{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[orderer2.supplychain-net orderer2.org1proxy.blockchain.ommani.vn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42000c820}
-2024/01/16 16:50:38 [DEBUG] Entered runEnroll
-2024/01/16 16:50:38 [DEBUG] Enrolling { Name:orderer2.supplychain-net Secret:**** CAName: AttrReqs:[] Profile:tls Label: CSR:&{Admin@supplychain-net [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [orderer2.supplychain-net orderer2.org1proxy.blockchain.ommani.vn] <nil> <nil> } Type:x509  }
-2024/01/16 16:50:38 [DEBUG] Initializing client with config: &{URL:https://ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:/root/ca-tools/supplychain/cas/orderers/tls TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name:orderer2.supplychain-net Secret:**** CAName: AttrReqs:[] Profile:tls Label: CSR:&{Admin@supplychain-net [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [orderer2.supplychain-net orderer2.org1proxy.blockchain.ommani.vn] <nil> <nil> } Type:x509  } CSR:{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[orderer2.supplychain-net orderer2.org1proxy.blockchain.ommani.vn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42000c820}
-2024/01/16 16:50:38 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc4200d2570 PluginOpts:<nil>}
-2024/01/16 16:50:38 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4200de700 DummyKeystore:<nil>}
-2024/01/16 16:50:38 [INFO] TLS Enabled
-2024/01/16 16:50:38 [DEBUG] CA Files: [/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem]
-2024/01/16 16:50:38 [DEBUG] Client Cert File: 
-2024/01/16 16:50:38 [DEBUG] Client Key File: 
-2024/01/16 16:50:38 [DEBUG] Client TLS certificate and/or key file not provided
-2024/01/16 16:50:38 [DEBUG] GenCSR &{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[orderer2.supplychain-net orderer2.org1proxy.blockchain.ommani.vn] KeyRequest:<nil> CA:<nil> SerialNumber:}
-2024/01/16 16:50:38 [INFO] generating key: &{A:ecdsa S:256}
-2024/01/16 16:50:38 [DEBUG] generate key from request: algo=ecdsa, size=256
-2024/01/16 16:50:38 [INFO] encoded CSR
-2024/01/16 16:50:38 [DEBUG] Sending request
-POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["orderer2.supplychain-net","orderer2.org1proxy.blockchain.ommani.vn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBizCCATICAQAwcTELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEhMB8G\nA1UEAxMYb3JkZXJlcjIuc3VwcGx5Y2hhaW4tbmV0MFkwEwYHKoZIzj0CAQYIKoZI\nzj0DAQcDQgAEv3C3mlY35ZFzyutHRL+ZTJ4IQAId6/cfS5xINDaQROFUxGkR56Zx\ncBu7qzwMAG5v2bEcRClo6skJL1cpuHhFWqBfMF0GCSqGSIb3DQEJDjFQME4wTAYD\nVR0RBEUwQ4IYb3JkZXJlcjIuc3VwcGx5Y2hhaW4tbmV0gidvcmRlcmVyMi5vcmcx\ncHJveHkuYmxvY2tjaGFpbi5vbW1hbmkudm4wCgYIKoZIzj0EAwIDRwAwRAIgOOzP\n910tTgEFzDTgCA/VPYd1DVhc6n/ouaP9Y0iK6e8CIAsCaZG/rLjNRuVmby+2ltfo\nBXMUWHDaW9DS3ck4qyic\n-----END CERTIFICATE REQUEST-----\n","profile":"tls","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}
-Error: POST failure of request: POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["orderer2.supplychain-net","orderer2.org1proxy.blockchain.ommani.vn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBizCCATICAQAwcTELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEhMB8G\nA1UEAxMYb3JkZXJlcjIuc3VwcGx5Y2hhaW4tbmV0MFkwEwYHKoZIzj0CAQYIKoZI\nzj0DAQcDQgAEv3C3mlY35ZFzyutHRL+ZTJ4IQAId6/cfS5xINDaQROFUxGkR56Zx\ncBu7qzwMAG5v2bEcRClo6skJL1cpuHhFWqBfMF0GCSqGSIb3DQEJDjFQME4wTAYD\nVR0RBEUwQ4IYb3JkZXJlcjIuc3VwcGx5Y2hhaW4tbmV0gidvcmRlcmVyMi5vcmcx\ncHJveHkuYmxvY2tjaGFpbi5vbW1hbmkudm4wCgYIKoZIzj0EAwIDRwAwRAIgOOzP\n910tTgEFzDTgCA/VPYd1DVhc6n/ouaP9Y0iK6e8CIAsCaZG/rLjNRuVmby+2ltfo\nBXMUWHDaW9DS3ck4qyic\n-----END CERTIFICATE REQUEST-----\n","profile":"tls","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}: Post https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll: dial tcp: lookup ca.supplychain-net.org1proxy.blockchain.ommani.vn on 10.96.0.10:53: no such host
-+ mkdir -p /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/tls
-+ cp /root/ca-tools/supplychain/cas/orderers/tls/keystore/51d4bb80ff2f82f2b87a269dc826eb6b3eefbd329f07121f3b9df25fe949756e_sk /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/tls/server.key
-+ cp '/root/ca-tools/supplychain/cas/orderers/tls/signcerts/*' /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/tls/server.crt
-cp: cannot stat '/root/ca-tools/supplychain/cas/orderers/tls/signcerts/*': No such file or directory
-+ cp '/root/ca-tools/supplychain/cas/orderers/tls/tlscacerts/*' /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/tls/ca.crt
-cp: cannot stat '/root/ca-tools/supplychain/cas/orderers/tls/tlscacerts/*': No such file or directory
-+ rm -rf /root/ca-tools/supplychain/cas/orderers/tls
-+ fabric-ca-client enroll -d -u https://orderer2.supplychain-net:orderer2.supplychain-net-pw@ca.supplychain-net.org1proxy.blockchain.ommani.vn -M /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/msp --tls.certfiles /crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem --csr.names O=Orderer,OU=Orderer,L=51.50/-0.13/London,C=GB
-2024/01/16 16:50:39 [DEBUG] Home directory: /root/.fabric-ca-client
-2024/01/16 16:50:39 [DEBUG] Client configuration settings: &{URL:https://orderer2.supplychain-net:orderer2.supplychain-net-pw@ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/msp TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:<nil> Type:x509  } CSR:{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420186a60}
-2024/01/16 16:50:39 [DEBUG] Entered runEnroll
-2024/01/16 16:50:39 [DEBUG] Enrolling { Name:orderer2.supplychain-net Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:&{Admin@supplychain-net [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [ca-tools-5d5bfc5d68-f57mn] <nil> <nil> } Type:x509  }
-2024/01/16 16:50:39 [DEBUG] Initializing client with config: &{URL:https://ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/msp TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name:orderer2.supplychain-net Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:&{Admin@supplychain-net [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [ca-tools-5d5bfc5d68-f57mn] <nil> <nil> } Type:x509  } CSR:{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420186a60}
-2024/01/16 16:50:39 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc4201a2690 PluginOpts:<nil>}
-2024/01/16 16:50:39 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc420572090 DummyKeystore:<nil>}
-2024/01/16 16:50:39 [INFO] TLS Enabled
-2024/01/16 16:50:39 [DEBUG] CA Files: [/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem]
-2024/01/16 16:50:39 [DEBUG] Client Cert File: 
-2024/01/16 16:50:39 [DEBUG] Client Key File: 
-2024/01/16 16:50:39 [DEBUG] Client TLS certificate and/or key file not provided
-2024/01/16 16:50:39 [DEBUG] GenCSR &{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:}
-2024/01/16 16:50:39 [INFO] generating key: &{A:ecdsa S:256}
-2024/01/16 16:50:39 [DEBUG] generate key from request: algo=ecdsa, size=256
-2024/01/16 16:50:39 [INFO] encoded CSR
-2024/01/16 16:50:39 [DEBUG] Sending request
-POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["ca-tools-5d5bfc5d68-f57mn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBZDCCAQoCAQAwcTELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEhMB8G\nA1UEAxMYb3JkZXJlcjIuc3VwcGx5Y2hhaW4tbmV0MFkwEwYHKoZIzj0CAQYIKoZI\nzj0DAQcDQgAE+rKp6cs+RPppiALcTQA8hD7L5vAWtD+I8go+Mr1rAebFs+/aG3ht\nj8V3dwTZDZfwfxDubtNgHduOXwRe4T7emKA3MDUGCSqGSIb3DQEJDjEoMCYwJAYD\nVR0RBB0wG4IZY2EtdG9vbHMtNWQ1YmZjNWQ2OC1mNTdtbjAKBggqhkjOPQQDAgNI\nADBFAiEAgdKfMEzjSIUXAKo9SluZ7oYeodBkJIINu6CYG4xQNl8CICKwIWCvWvqY\ngwWu4C5s8K1US3r7bHWgaOijKs5kq7+x\n-----END CERTIFICATE REQUEST-----\n","profile":"","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}
-Error: POST failure of request: POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["ca-tools-5d5bfc5d68-f57mn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBZDCCAQoCAQAwcTELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEhMB8G\nA1UEAxMYb3JkZXJlcjIuc3VwcGx5Y2hhaW4tbmV0MFkwEwYHKoZIzj0CAQYIKoZI\nzj0DAQcDQgAE+rKp6cs+RPppiALcTQA8hD7L5vAWtD+I8go+Mr1rAebFs+/aG3ht\nj8V3dwTZDZfwfxDubtNgHduOXwRe4T7emKA3MDUGCSqGSIb3DQEJDjEoMCYwJAYD\nVR0RBB0wG4IZY2EtdG9vbHMtNWQ1YmZjNWQ2OC1mNTdtbjAKBggqhkjOPQQDAgNI\nADBFAiEAgdKfMEzjSIUXAKo9SluZ7oYeodBkJIINu6CYG4xQNl8CICKwIWCvWvqY\ngwWu4C5s8K1US3r7bHWgaOijKs5kq7+x\n-----END CERTIFICATE REQUEST-----\n","profile":"","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}: Post https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll: dial tcp: lookup ca.supplychain-net.org1proxy.blockchain.ommani.vn on 10.96.0.10:53: no such host
-+ mkdir /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/msp/tlscacerts
-+ '[' haproxy '!=' none ']'
-+ mv '/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/msp/cacerts/*.pem' /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/msp/cacerts/ca-supplychain-net-org1proxy.blockchain.ommani.vn.pem
-mv: cannot stat '/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/msp/cacerts/*.pem': No such file or directory
-+ cp '/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/msp/cacerts/*' /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/msp/tlscacerts
-cp: cannot stat '/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/msp/cacerts/*': No such file or directory
-+ mkdir -p /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/msp/admincerts
-+ cp /crypto-config/ordererOrganizations/supplychain-net/msp/admincerts/Admin@supplychain-net-cert.pem /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/msp/admincerts
-need to execute scripts for orderer3 
-cp: cannot stat '/crypto-config/ordererOrganizations/supplychain-net/msp/admincerts/Admin@supplychain-net-cert.pem': No such file or directory
-+ cd /root/ca-tools/supplychain
-find: '/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/msp/keystore/': No such file or directory
-Registering and enrolling orderer3.supplychain-net with csr hosts orderer3.supplychain-net,orderer3.org1proxy.blockchain.ommani.vn
-+ CURRENT_DIR=/root/ca-tools/supplychain
-+ FULLY_QUALIFIED_ORG_NAME=supplychain-net
-+ EXTERNAL_URL_SUFFIX=org1proxy.blockchain.ommani.vn
-+ ALTERNATIVE_ORG_NAMES=("org1proxy.blockchain.ommani.vn")
-+ ORG_NAME=supplychain
-+ SUBJECT=C=UK,ST=London,L=London,O=supplychain
-+ SUBJECT_PEER=O=Orderer,OU=Orderer,L=51.50/-0.13/London,C=GB
-+ CA=ca.supplychain-net.org1proxy.blockchain.ommani.vn
-+ CA_ADMIN_USER=supplychain-admin
-+ CA_ADMIN_PASS=supplychain-adminpw
-+ ORDERER_NAME=orderer3
-+ ORG_ADMIN_USER=Admin@supplychain-net
-+ ORG_ADMIN_PASS=Admin@supplychain-net-pw
-+ ORG_CYPTO_FOLDER=/crypto-config/ordererOrganizations/supplychain-net
-+ ROOT_TLS_CERT=/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem
-+ CAS_FOLDER=/root/ca-tools/cas/ca-supplychain
-+ ORG_HOME=/root/ca-tools/supplychain
-+ PEER=orderer3.supplychain-net
-+ CSR_HOSTS=orderer3.supplychain-net
-+ for i in '"${ALTERNATIVE_ORG_NAMES[@]}"'
-+ CSR_HOSTS=orderer3.supplychain-net,orderer3.org1proxy.blockchain.ommani.vn
-+ echo 'Registering and enrolling orderer3.supplychain-net with csr hosts orderer3.supplychain-net,orderer3.org1proxy.blockchain.ommani.vn'
-+ fabric-ca-client register -d --id.name orderer3.supplychain-net --id.secret orderer3.supplychain-net-pw --id.type orderer --tls.certfiles /crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem --home /root/ca-tools/cas/ca-supplychain
-2024/01/16 16:50:39 [DEBUG] Home directory: /root/ca-tools/cas/ca-supplychain
-2024/01/16 16:50:39 [INFO] Configuration file location: /root/ca-tools/cas/ca-supplychain/fabric-ca-client-config.yaml
-2024/01/16 16:50:39 [DEBUG] Checking for enrollment
-2024/01/16 16:50:39 [DEBUG] Initializing client with config: &{URL:https://ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:msp TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:<nil> Type:x509  } CSR:{CN:supplychain-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:orderer3.supplychain-net Type:orderer Secret:orderer3.supplychain-net-pw MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420560760}
-2024/01/16 16:50:39 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc4200b6540 PluginOpts:<nil>}
-2024/01/16 16:50:39 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc42054ef10 DummyKeystore:<nil>}
-2024/01/16 16:50:39 [INFO] TLS Enabled
-2024/01/16 16:50:39 [DEBUG] CA Files: [/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem]
-2024/01/16 16:50:39 [DEBUG] Client Cert File: 
-2024/01/16 16:50:39 [DEBUG] Client Key File: 
-2024/01/16 16:50:39 [DEBUG] Client TLS certificate and/or key file not provided
-2024/01/16 16:50:39 [ERROR] Enrollment check failed: Idemix enrollment information does not exist
-Error: Enrollment information does not exist. Please execute enroll command first. Example: fabric-ca-client enroll -u http://user:userpw@serverAddr:serverPort
-+ fabric-ca-client enroll -d --enrollment.profile tls -u https://orderer3.supplychain-net:orderer3.supplychain-net-pw@ca.supplychain-net.org1proxy.blockchain.ommani.vn -M /root/ca-tools/supplychain/cas/orderers/tls --csr.hosts orderer3.supplychain-net,orderer3.org1proxy.blockchain.ommani.vn --tls.certfiles /crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem --csr.names O=Orderer,OU=Orderer,L=51.50/-0.13/London,C=GB
-2024/01/16 16:50:40 [DEBUG] Home directory: /root/.fabric-ca-client
-2024/01/16 16:50:40 [DEBUG] Client configuration settings: &{URL:https://orderer3.supplychain-net:orderer3.supplychain-net-pw@ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:/root/ca-tools/supplychain/cas/orderers/tls TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** CAName: AttrReqs:[] Profile:tls Label: CSR:<nil> Type:x509  } CSR:{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[orderer3.supplychain-net orderer3.org1proxy.blockchain.ommani.vn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4200ba680}
-2024/01/16 16:50:40 [DEBUG] Entered runEnroll
-2024/01/16 16:50:40 [DEBUG] Enrolling { Name:orderer3.supplychain-net Secret:**** CAName: AttrReqs:[] Profile:tls Label: CSR:&{Admin@supplychain-net [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [orderer3.supplychain-net orderer3.org1proxy.blockchain.ommani.vn] <nil> <nil> } Type:x509  }
-2024/01/16 16:50:40 [DEBUG] Initializing client with config: &{URL:https://ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:/root/ca-tools/supplychain/cas/orderers/tls TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name:orderer3.supplychain-net Secret:**** CAName: AttrReqs:[] Profile:tls Label: CSR:&{Admin@supplychain-net [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [orderer3.supplychain-net orderer3.org1proxy.blockchain.ommani.vn] <nil> <nil> } Type:x509  } CSR:{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[orderer3.supplychain-net orderer3.org1proxy.blockchain.ommani.vn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4200ba680}
-2024/01/16 16:50:40 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc4202205a0 PluginOpts:<nil>}
-2024/01/16 16:50:40 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc420228f40 DummyKeystore:<nil>}
-2024/01/16 16:50:40 [INFO] TLS Enabled
-2024/01/16 16:50:40 [DEBUG] CA Files: [/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem]
-2024/01/16 16:50:40 [DEBUG] Client Cert File: 
-2024/01/16 16:50:40 [DEBUG] Client Key File: 
-2024/01/16 16:50:40 [DEBUG] Client TLS certificate and/or key file not provided
-2024/01/16 16:50:40 [DEBUG] GenCSR &{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[orderer3.supplychain-net orderer3.org1proxy.blockchain.ommani.vn] KeyRequest:<nil> CA:<nil> SerialNumber:}
-2024/01/16 16:50:40 [INFO] generating key: &{A:ecdsa S:256}
-2024/01/16 16:50:40 [DEBUG] generate key from request: algo=ecdsa, size=256
-2024/01/16 16:50:40 [INFO] encoded CSR
-2024/01/16 16:50:40 [DEBUG] Sending request
-POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["orderer3.supplychain-net","orderer3.org1proxy.blockchain.ommani.vn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBizCCATICAQAwcTELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEhMB8G\nA1UEAxMYb3JkZXJlcjMuc3VwcGx5Y2hhaW4tbmV0MFkwEwYHKoZIzj0CAQYIKoZI\nzj0DAQcDQgAEnUXcnsC4QrWQi/YRyDI/ybUAl3e8JJIQg5d9RKYcDDXM3KpT8pof\nzx3xN7lf9KNQu4gk9mFvFr8PivMarslIuaBfMF0GCSqGSIb3DQEJDjFQME4wTAYD\nVR0RBEUwQ4IYb3JkZXJlcjMuc3VwcGx5Y2hhaW4tbmV0gidvcmRlcmVyMy5vcmcx\ncHJveHkuYmxvY2tjaGFpbi5vbW1hbmkudm4wCgYIKoZIzj0EAwIDRwAwRAIgE6Kg\n2Zq5oWjSmjaZFcTspAA/FioSgVhN4P3LiCPO9UUCIGgGdKwLJqg1JE9QVz22GNT5\nbVfYDYTZRHfDj6x6b34O\n-----END CERTIFICATE REQUEST-----\n","profile":"tls","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}
-Error: POST failure of request: POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["orderer3.supplychain-net","orderer3.org1proxy.blockchain.ommani.vn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBizCCATICAQAwcTELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEhMB8G\nA1UEAxMYb3JkZXJlcjMuc3VwcGx5Y2hhaW4tbmV0MFkwEwYHKoZIzj0CAQYIKoZI\nzj0DAQcDQgAEnUXcnsC4QrWQi/YRyDI/ybUAl3e8JJIQg5d9RKYcDDXM3KpT8pof\nzx3xN7lf9KNQu4gk9mFvFr8PivMarslIuaBfMF0GCSqGSIb3DQEJDjFQME4wTAYD\nVR0RBEUwQ4IYb3JkZXJlcjMuc3VwcGx5Y2hhaW4tbmV0gidvcmRlcmVyMy5vcmcx\ncHJveHkuYmxvY2tjaGFpbi5vbW1hbmkudm4wCgYIKoZIzj0EAwIDRwAwRAIgE6Kg\n2Zq5oWjSmjaZFcTspAA/FioSgVhN4P3LiCPO9UUCIGgGdKwLJqg1JE9QVz22GNT5\nbVfYDYTZRHfDj6x6b34O\n-----END CERTIFICATE REQUEST-----\n","profile":"tls","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}: Post https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll: dial tcp: lookup ca.supplychain-net.org1proxy.blockchain.ommani.vn on 10.96.0.10:53: no such host
-+ mkdir -p /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/tls
-+ cp /root/ca-tools/supplychain/cas/orderers/tls/keystore/c06407d639bc8015684f63cab11535c733f94a14f7ca8f41bfc5a2c97ba1f6df_sk /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/tls/server.key
-+ cp '/root/ca-tools/supplychain/cas/orderers/tls/signcerts/*' /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/tls/server.crt
-cp: cannot stat '/root/ca-tools/supplychain/cas/orderers/tls/signcerts/*': No such file or directory
-+ cp '/root/ca-tools/supplychain/cas/orderers/tls/tlscacerts/*' /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/tls/ca.crt
-cp: cannot stat '/root/ca-tools/supplychain/cas/orderers/tls/tlscacerts/*': No such file or directory
-+ rm -rf /root/ca-tools/supplychain/cas/orderers/tls
-+ fabric-ca-client enroll -d -u https://orderer3.supplychain-net:orderer3.supplychain-net-pw@ca.supplychain-net.org1proxy.blockchain.ommani.vn -M /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/msp --tls.certfiles /crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem --csr.names O=Orderer,OU=Orderer,L=51.50/-0.13/London,C=GB
-2024/01/16 16:50:40 [DEBUG] Home directory: /root/.fabric-ca-client
-2024/01/16 16:50:40 [DEBUG] Client configuration settings: &{URL:https://orderer3.supplychain-net:orderer3.supplychain-net-pw@ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/msp TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:<nil> Type:x509  } CSR:{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420485940}
-2024/01/16 16:50:40 [DEBUG] Entered runEnroll
-2024/01/16 16:50:40 [DEBUG] Enrolling { Name:orderer3.supplychain-net Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:&{Admin@supplychain-net [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [ca-tools-5d5bfc5d68-f57mn] <nil> <nil> } Type:x509  }
-2024/01/16 16:50:40 [DEBUG] Initializing client with config: &{URL:https://ca.supplychain-net.org1proxy.blockchain.ommani.vn MSPDir:/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/msp TLS:{Enabled:true CertFiles:[/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name:orderer3.supplychain-net Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:&{Admin@supplychain-net [{   Orderer  } {    Orderer } {  51.50/-0.13/London   } {GB     }] [ca-tools-5d5bfc5d68-f57mn] <nil> <nil> } Type:x509  } CSR:{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:0 Affiliation: Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420485940}
-2024/01/16 16:50:40 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc42044e660 PluginOpts:<nil>}
-2024/01/16 16:50:40 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4200b3a60 DummyKeystore:<nil>}
-2024/01/16 16:50:40 [INFO] TLS Enabled
-2024/01/16 16:50:40 [DEBUG] CA Files: [/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem]
-2024/01/16 16:50:40 [DEBUG] Client Cert File: 
-2024/01/16 16:50:40 [DEBUG] Client Key File: 
-2024/01/16 16:50:40 [DEBUG] Client TLS certificate and/or key file not provided
-2024/01/16 16:50:40 [DEBUG] GenCSR &{CN:Admin@supplychain-net Names:[{C: ST: L: O:Orderer OU: SerialNumber:} {C: ST: L: O: OU:Orderer SerialNumber:} {C: ST: L:51.50/-0.13/London O: OU: SerialNumber:} {C:GB ST: L: O: OU: SerialNumber:}] Hosts:[ca-tools-5d5bfc5d68-f57mn] KeyRequest:<nil> CA:<nil> SerialNumber:}
-2024/01/16 16:50:40 [INFO] generating key: &{A:ecdsa S:256}
-2024/01/16 16:50:40 [DEBUG] generate key from request: algo=ecdsa, size=256
-2024/01/16 16:50:40 [INFO] encoded CSR
-2024/01/16 16:50:40 [DEBUG] Sending request
-POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["ca-tools-5d5bfc5d68-f57mn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBYzCCAQoCAQAwcTELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEhMB8G\nA1UEAxMYb3JkZXJlcjMuc3VwcGx5Y2hhaW4tbmV0MFkwEwYHKoZIzj0CAQYIKoZI\nzj0DAQcDQgAEul/F2woeg89cW/GlNMZzHuDd4r9YpX5vsw7gCBUuvoXbQmaV1NO7\n9B1rCiLGXSPnsl2b7dMovkpwx6oihx6C1aA3MDUGCSqGSIb3DQEJDjEoMCYwJAYD\nVR0RBB0wG4IZY2EtdG9vbHMtNWQ1YmZjNWQ2OC1mNTdtbjAKBggqhkjOPQQDAgNH\nADBEAiBTmP4Z/OfPgz61TgYv/+fOU14dgngx394r/onmM9CLKAIgRpJlF8jHDVi+\nx+lXem+XGay1AkpiXy5b8+yWtNrItuY=\n-----END CERTIFICATE REQUEST-----\n","profile":"","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}
-Error: POST failure of request: POST https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll
-{"hosts":["ca-tools-5d5bfc5d68-f57mn"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBYzCCAQoCAQAwcTELMAkGA1UEBhMCR0IxGzAZBgNVBAcTEjUxLjUwLy0wLjEz\nL0xvbmRvbjEQMA4GA1UEChMHT3JkZXJlcjEQMA4GA1UECxMHT3JkZXJlcjEhMB8G\nA1UEAxMYb3JkZXJlcjMuc3VwcGx5Y2hhaW4tbmV0MFkwEwYHKoZIzj0CAQYIKoZI\nzj0DAQcDQgAEul/F2woeg89cW/GlNMZzHuDd4r9YpX5vsw7gCBUuvoXbQmaV1NO7\n9B1rCiLGXSPnsl2b7dMovkpwx6oihx6C1aA3MDUGCSqGSIb3DQEJDjEoMCYwJAYD\nVR0RBB0wG4IZY2EtdG9vbHMtNWQ1YmZjNWQ2OC1mNTdtbjAKBggqhkjOPQQDAgNH\nADBEAiBTmP4Z/OfPgz61TgYv/+fOU14dgngx394r/onmM9CLKAIgRpJlF8jHDVi+\nx+lXem+XGay1AkpiXy5b8+yWtNrItuY=\n-----END CERTIFICATE REQUEST-----\n","profile":"","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}: Post https://ca.supplychain-net.org1proxy.blockchain.ommani.vn/enroll: dial tcp: lookup ca.supplychain-net.org1proxy.blockchain.ommani.vn on 10.96.0.10:53: no such host
-+ mkdir /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/msp/tlscacerts
-+ '[' haproxy '!=' none ']'
-+ mv '/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/msp/cacerts/*.pem' /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/msp/cacerts/ca-supplychain-net-org1proxy.blockchain.ommani.vn.pem
-mv: cannot stat '/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/msp/cacerts/*.pem': No such file or directory
-+ cp '/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/msp/cacerts/*' /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/msp/tlscacerts
-cp: cannot stat '/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/msp/cacerts/*': No such file or directory
-+ mkdir -p /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/msp/admincerts
-+ cp /crypto-config/ordererOrganizations/supplychain-net/msp/admincerts/Admin@supplychain-net-cert.pem /crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/msp/admincerts
-cp: cannot stat '/crypto-config/ordererOrganizations/supplychain-net/msp/admincerts/Admin@supplychain-net-cert.pem': No such file or directory
-+ cd /root/ca-tools/supplychain
+Update package list and install packages using apk package manager.
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+v3.19.0-268-ga2dfc6b7b8c [https://dl-cdn.alpinelinux.org/alpine/v3.19/main]
+v3.19.0-271-g651e0a2c3b8 [https://dl-cdn.alpinelinux.org/alpine/v3.19/community]
+OK: 22984 distinct packages available
+(1/4) Installing ncurses-terminfo-base (6.4_p20231125-r0)
+(2/4) Installing libncursesw (6.4_p20231125-r0)
+(3/4) Installing readline (8.2.1-r2)
+(4/4) Installing bash (5.2.21-r0)
+Executing bash-5.2.21-r0.post-install
+Executing busybox-1.36.1-r15.trigger
+OK: 16 MiB in 30 packages
+Puting secrets/certificates from Vault server
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+{"request_id":"eca14f63-3dc7-9bbb-c9d9-15a87626dd3d","lease_id":"","renewable":false,"lease_duration":0,"data":{"created_time":"2024-01-18T07:20:04.409350346Z","custom_metadata":null,"deletion_time":"","destroyed":false,"version":261},"wrap_info":null,"warnings":null,"auth":null}
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  2641  100   281  100  2360  13551   111k --:--:-- --:--:-- --:--:--  128k
+./store-vault-orderer.sh: line 3: /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/msp/cacerts/ca-supplychain-net-7054.pem: No such file or directory
+cat: can't open '/formatcertificate/msp/ca-supplychain-net-7054.pem.txt': No such file or directory
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  3799  100   281  100  3518  66461   812k --:--:-- --:--:-- --:--:--  927k
+{"request_id":"eacb08a3-9b4a-5380-4e77-567d9715912f","lease_id":"","renewable":false,"lease_duration":0,"data":{"created_time":"2024-01-18T07:20:04.64908172Z","custom_metadata":null,"deletion_time":"","destroyed":false,"version":2601},"wrap_info":null,"warnings":null,"auth":null}
+Admin certificates are not ready, sleeping for 2
+./store-vault-orderer.sh: line 3: /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/msp/cacerts/ca-supplychain-net-7054.pem: No such file or directory
+cat: can't open '/formatcertificate/msp/ca-supplychain-net-7054.pem.txt': No such file or directory
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  3800  100   282  100  3518  62375   759k --:--:-- --:--:-- --:--:--  927k
+{"request_id":"7e071ef5-dba0-fe1d-2632-d42b84bc9513","lease_id":"","renewable":false,"lease_duration":0,"data":{"created_time":"2024-01-18T07:20:06.900191465Z","custom_metadata":null,"deletion_time":"","destroyed":false,"version":2602},"wrap_info":null,"warnings":null,"auth":null}
+Admin certificates are not ready, sleeping for 2
+./store-vault-orderer.sh: line 3: /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/msp/cacerts/ca-supplychain-net-7054.pem: No such file or directory
+cat: can't open '/formatcertificate/msp/ca-supplychain-net-7054.pem.txt': No such file or directory
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  3800  100   282  100  3518  27488   334k --:--:-- --:--:-- --:--:--  371k
+{"request_id":"24786f73-b64f-d578-81ca-738af8f3cbf1","lease_id":"","renewable":false,"lease_duration":0,"data":{"created_time":"2024-01-18T07:20:09.227985036Z","custom_metadata":null,"deletion_time":"","destroyed":false,"version":2603},"wrap_info":null,"warnings":null,"auth":null}
+Admin certificates are not ready, sleeping for 2
+./store-vault-orderer.sh: line 3: /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/msp/cacerts/ca-supplychain-net-7054.pem: No such file or directory
+cat: can't open '/formatcertificate/msp/ca-supplychain-net-7054.pem.txt': No such file or directory
+{"request_id":"0ecd647d-c1e6-4a4c-0acc-3f960c0cfbfa","lease_id":"","renewable":false,"lease_duration":0,"data":{"created_time":"2024-01-18T07:20:11.464374857Z","custom_metadata":null,"deletion_time":"","destroyed":false,"version":2604},"wrap_info":null,"warnings":null,"auth":null}
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  3800  100   282  100  3518   9532   116k --:--:-- --:--:-- --:--:--  127k
+Admin certificates are not ready, sleeping for 2
+./store-vault-orderer.sh: line 3: /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/msp/cacerts/ca-supplychain-net-7054.pem: No such file or directory
+cat: can't open '/formatcertificate/msp/ca-supplychain-net-7054.pem.txt': No such file or directory
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  3800  100   282  100  3518  25676   312k --:--:-- --:--:-- --:--:--  371k
+{"request_id":"b24d578a-85a8-df4a-fc20-ad91f4e4fa89","lease_id":"","renewable":false,"lease_duration":0,"data":{"created_time":"2024-01-18T07:20:13.676954361Z","custom_metadata":null,"deletion_time":"","destroyed":false,"version":2605},"wrap_info":null,"warnings":null,"auth":null}
+Admin certificates are not ready, sleeping for 2
+./store-vault-orderer.sh: line 3: /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/msp/cacerts/ca-supplychain-net-7054.pem: No such file or directory
+cat: can't open '/formatcertificate/msp/ca-supplychain-net-7054.pem.txt': No such file or directory
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+{"request_id":"24b612cf-e981-d583-b4f8-8b6066e6b795","lease_id":"","renewable":false,"lease_duration":0,"data":{"created_time":"2024-01-18T07:20:15.908074413Z","custom_metadata":null,"deletion_time":"","destroyed":false,"version":2606},"wrap_info":null,"warnings":null,"auth":null}
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  3800  100   282  100  3518  34136   415k --:--:-- --:--:-- --:--:--  463k
+Admin certificates are not ready, sleeping for 2
+./store-vault-orderer.sh: line 3: /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/msp/cacerts/ca-supplychain-net-7054.pem: No such file or directory
+cat: can't open '/formatcertificate/msp/ca-supplychain-net-7054.pem.txt': No such file or directory
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+{"request_id":"3cc9db53-fd5c-6bcb-a5ef-20446a51ffad","lease_id":"","renewable":false,"lease_duration":0,"data":{"created_time":"2024-01-18T07:20:18.133411674Z","custom_metadata":null,"deletion_time":"","destroyed":false,"version":2607},"wrap_info":null,"warnings":null,"auth":null}
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  3800  100   282  100  3518  53663   653k --:--:-- --:--:-- --:--:--  742k
+Admin certificates are not ready, sleeping for 2
+./store-vault-orderer.sh: line 3: /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/msp/cacerts/ca-supplychain-net-7054.pem: No such file or directory
+cat: can't open '/formatcertificate/msp/ca-supplychain-net-7054.pem.txt': No such file or directory
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+{"request_id":"5cb159bb-d26c-a079-66f6-a912fb56d309","lease_id":"","renewable":false,"lease_duration":0,"data":{"created_time":"2024-01-18T07:20:20.3936724Z","custom_metadata":null,"deletion_time":"","destroyed":false,"version":2608},"wrap_info":null,"warnings":null,"auth":null}
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  3798  100   280  100  3518  12230   150k --:--:-- --:--:-- --:--:--  168k
+Admin certificates are not ready, sleeping for 2
+./store-vault-orderer.sh: line 3: /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/msp/cacerts/ca-supplychain-net-7054.pem: No such file or directory
+cat: can't open '/formatcertificate/msp/ca-supplychain-net-7054.pem.txt': No such file or directory
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  3800  100   282  100  3518   6352  79253 --:--:-- --:--:-- --:--:-- 86363
+{"request_id":"9d664e13-ec1f-2a4d-c059-6191e27494de","lease_id":"","renewable":false,"lease_duration":0,"data":{"created_time":"2024-01-18T07:20:22.901019441Z","custom_metadata":null,"deletion_time":"","destroyed":false,"version":2609},"wrap_info":null,"warnings":null,"auth":null}
+Admin certificates are not ready, sleeping for 2
+./store-vault-orderer.sh: line 3: /crypto-config/ordererOrganizations/supplychain-net/users/Admin@supplychain-net/msp/cacerts/ca-supplychain-net-7054.pem: No such file or directory
+cat: can't open '/formatcertificate/msp/ca-supplychain-net-7054.pem.txt': No such file or directory
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  3800  100   282  100  3518  50330   613k --:--:-- --:--:-- --:--:--  742k
+{"request_id":"0e76a169-d597-c674-ee6a-57ea01cc459c","lease_id":"","renewable":false,"lease_duration":0,"data":{"created_time":"2024-01-18T07:20:25.161630541Z","custom_metadata":null,"deletion_time":"","destroyed":false,"version":2610},"wrap_info":null,"warnings":null,"auth":null}
+Admin certificates are not ready, sleeping for 2
+Retry attempted 10 times, Admin certificates have not been saved.
